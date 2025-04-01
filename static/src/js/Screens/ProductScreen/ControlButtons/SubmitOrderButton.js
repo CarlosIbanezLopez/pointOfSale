@@ -69,22 +69,6 @@
 //     return SubmitOrderButton;
 // });
 
-odoo.define('pos_restaurant.SubmitOrderButton', function(require) {
-    'use strict';
-
-    const PosComponent = require('point_of_sale.PosComponent');
-    const ProductScreen = require('point_of_sale.ProductScreen');
-    const Registries = require('point_of_sale.Registries');
-    const { nextFrame } = require('point_of_sale.utils');
-
-    class SubmitOrderButton extends PosComponent {
-        setup() {
-            super.setup();
-            this.clicked = false; // Evitar múltiples clics seguidos
-        }
-
-        
-
         // async _onClick() {
         //     if (!this.clicked) {
         //         try {
@@ -161,6 +145,23 @@ odoo.define('pos_restaurant.SubmitOrderButton', function(require) {
         //         }
         //     }
         // }
+
+odoo.define('pos_restaurant.SubmitOrderButton', function(require) {
+    'use strict';
+
+    const PosComponent = require('point_of_sale.PosComponent');
+    const ProductScreen = require('point_of_sale.ProductScreen');
+    const Registries = require('point_of_sale.Registries');
+    const { nextFrame } = require('point_of_sale.utils');
+
+    class SubmitOrderButton extends PosComponent {
+        setup() {
+            super.setup();
+            this.clicked = false; // Evitar múltiples clics seguidos
+        }
+
+        
+
     // ESTO SERA CON LA FECHA DE LA PC DEL USUARIO
         async _onClick() {
             if (!this.clicked) {
