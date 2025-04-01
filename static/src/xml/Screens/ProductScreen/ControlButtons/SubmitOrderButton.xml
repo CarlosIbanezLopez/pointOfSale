@@ -1,36 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <templates id="template" xml:space="preserve">
     <t t-name="SubmitOrderButton" owl="1">
-        <!-- Botón para "Order" -->
         <span class="control-button" t-att-class="addedClasses" t-on-click="_onClick">
-            <i class="fa fa-cutlery"></i>
+            <i class="fa fa-cutlery"/>
             <span> </span>
             <span>Order</span>
         </span>
-
-
-        <div class="pos-receipt-new printable-receipt-new hidden-print">
-            <div class="orderlines-new">
-                <div class="printable-receipt-new pos-receipt-qty-per-price-new pos-receipt-left-padding-new" t-ref="order-receipt">
-                    <t t-if="currentOrder">
-                        <!-- Título del pedido en negrita y con salto de línea -->
-                        <h4 style="font-weight: bold;" t-esc="currentOrder.name"/></h4  >
-                        <br/>
-
-                        <!-- Líneas del pedido -->
-                        <t t-set="order_lines" t-value="currentOrder.get_orderlines()" />
-                        <t t-log="order_lines" />
-                        
-                        <t t-foreach="currentOrder.get_orderlines()" t-as="line" t-key="line.id">
-                            <div>
-                                <span><t t-esc="line.product.display_name"/> </span>
-                                <span>(<t t-esc="line.note" />)</span>
-                                <span> x <t t-esc="line.quantity"/></span>
-                            </div>
-                        </t>
-                    </t>
-                </div>
-            </div>
-        </div>
     </t>
 </templates>
