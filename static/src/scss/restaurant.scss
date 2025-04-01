@@ -510,89 +510,22 @@
     padding: 1.5rem;
 }
 
-@media print {
-    .printable-receipt-new {
-        display: block !important;
-        visibility: visible !important;
-        color: black !important;
-        background: white !important;
-        position: static !important;
-    }
-
-    .pos-receipt-new, .orderlines-new {
-        visibility: visible !important;
-        display: block !important;
-        color: #000 !important; /* Fuerza texto negro */
-        background: none !important;
-    }
-}
-
-.hidden-print {
-    display: none;
-}
-
-@media print {
-    .hidden-print {
-        display: block;
-    }
-}
-
-
-
-// @media print {
-//     .tip-screen .pos-receipt-container {
-//         display: block;
-//     }
-//     .tip-screen .pos-receipt-container * {
-//         visibility: visible;
-//     }
-// }
-
-//mi aumento
-// @media screen {
-//     .printable-receipt {
-//         position: absolute;
-//         // left: -10000px;  /* lo mueve fuera de la pantalla */
-//     }
-// }
-
-// @media print {
-//     .printable-receipt {
-//         visibility: visible;//amuento
-//         position: static;
-//         left: 0;
-//         display: block;
-//     }
-// }
-
-
-
 .tip-screen .pos-receipt-container {
     display: none;
-    // display: block;
     position: fixed;
     top: 0;
     left: 0;
     margin: 0;
 }
 
-
-//
-// @media print {
-//     .pos-receipt, .orderlines, .printable-receipt {
-//         visibility: visible !important;
-//         display: block !important;
-//         color: #000 !important; /* Fuerza texto negro */
-//         background: none !important;
-//     }
-    
-//     /* Oculta elementos innecesarios */
-//     // .pos-receipt:not(.printable-receipt) {
-//     //     display: none !important;
-//     // }
-// }
-// //
-
+@media print {
+    .tip-screen .pos-receipt-container {
+        display: block;
+    }
+    .tip-screen .pos-receipt-container * {
+        visibility: visible;
+    }
+}
 
 .pos-receipt .tip-form {
     padding-top: 0.75rem;
